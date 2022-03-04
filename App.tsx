@@ -16,25 +16,19 @@ const App = () => {
         activeColor="red"
         inactiveColor="green"
         screenOptions={({ route }) => ({
-          tabBarIcon: options => {
+          tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
             if (route.name === 'EventList') {
-              iconName = options.focused ? 'list' : 'list-outline';
+              iconName = focused ? 'list' : 'list-outline';
             } else if (route.name === 'AddEvent') {
-              iconName = options.focused ? 'add-circle' : 'add-circle-outline';
+              iconName = focused ? 'add-circle' : 'add-circle-outline';
             } else if (route.name === 'Dashboard') {
-              iconName = options.focused ? 'bar-chart' : 'bar-chart-outline';
+              iconName = focused ? 'bar-chart' : 'bar-chart-outline';
             } else {
-              iconName = options.focused ? 'ellipse' : 'ellipse-outline';
+              iconName = focused ? 'ellipse' : 'ellipse-outline';
             }
-            return (
-              <Ionicons
-                name={iconName}
-                color={options.color}
-                size={options.size}
-              />
-            );
+            return <Ionicons name={iconName} color={color} size={size} />;
           },
           tabBarActiveTintColor: 'tomato',
           tabBarInactiveTintColor: 'gray',
