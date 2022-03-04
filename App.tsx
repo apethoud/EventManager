@@ -16,7 +16,7 @@ const App = () => {
         activeColor="red"
         inactiveColor="green"
         screenOptions={({ route }) => ({
-          tabBarIcon: (options) => {
+          tabBarIcon: options => {
             let iconName;
 
             if (route.name === 'EventList') {
@@ -39,9 +39,21 @@ const App = () => {
           tabBarActiveTintColor: 'tomato',
           tabBarInactiveTintColor: 'gray',
         })}>
-        <Tab.Screen name="EventList" component={EventList} />
-        <Tab.Screen name="AddEvent" component={AddEvent} />
-        <Tab.Screen name="Dashboard" component={Dashboard} />
+        <Tab.Screen
+          name="EventList"
+          options={{ title: 'Event List' }}
+          component={EventList}
+        />
+        <Tab.Screen
+          name="AddEvent"
+          options={{ title: 'Add Event' }}
+          component={AddEvent}
+        />
+        <Tab.Screen
+          name="Dashboard"
+          options={{ title: 'Dashboard' }}
+          component={Dashboard}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
