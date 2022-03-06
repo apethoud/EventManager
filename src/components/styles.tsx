@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { TextInput } from 'react-native';
 
 export const StyledTextInput = styled.TextInput`
   height: 48px;
