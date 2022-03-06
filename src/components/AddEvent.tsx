@@ -6,14 +6,18 @@ export default function AddEvent() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>test text</Text>
-      <TextInput value={name} onChangeText={setName} style={styles.input} />
+      <Text style={styles.inputLabel}>Event Name</Text>
+      <TextInput
+        value={name}
+        onChangeText={setName}
+        style={styles.inputField}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  input: {
+  inputField: {
     height: 48,
     width: 240,
     backgroundColor: '#fff',
@@ -21,5 +25,9 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: '#ccc',
     borderRadius: 8,
+  },
+  inputLabel: {
+    fontSize: 18,
+    color: '#222',
   },
 });
