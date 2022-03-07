@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, Button } from 'react-native';
 import InputSection from './InputSection';
 
 export default function AddEvent() {
   const [name, setName] = useState('');
   const [costPerTicket, setCostPerTicket] = useState('');
   const [registrationCapacity, setRegistrationCapacity] = useState('');
+
+  function addEvent() {
+    console.log('addEvent');
+  }
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -24,6 +28,7 @@ export default function AddEvent() {
         inputUpdater={setRegistrationCapacity}
         label="Event Capacity"
       />
+      <Button onPress={() => addEvent()} title="Create Event" />
     </View>
   );
 }
