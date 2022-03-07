@@ -8,7 +8,12 @@ export default function AddEvent() {
   const [registrationCapacity, setRegistrationCapacity] = useState('');
 
   function addEvent() {
-    console.log('addEvent');
+    let payload = {
+      name,
+      costPerTicket,
+      registrationCapacity,
+    };
+    console.log(payload);
   }
 
   return (
