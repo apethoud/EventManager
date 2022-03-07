@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const StyledTextInput = styled.TextInput`
   height: 48px;
   width: 240px;
-  background-color: '#fff';
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
 `;
