@@ -1,23 +1,26 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Event } from '../models/Event';
+import _ from 'lodash';
 
 export interface EventsState {
-  events: Event[];
+  eventList: Event[];
 }
 
 const initialState: EventsState = {
-  events: [],
+  eventList: [],
 };
 
 export const EventsSlice = createSlice({
   name: 'events',
   initialState,
   reducers: {
-    addEvent: state => {
-      state.events = [];
+    addEvent: (state, action: PayloadAction<Event>) => {
+      state.eventList.push(action.payload);
     },
     deleteEvent: (state, action: PayloadAction<number>) => {
-      state.events = [];
+      _.remove(state.eventList, event => {
+        event.id === action.payload;
+      });
     },
   },
 });
