@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Button } from 'react-native';
-import InputSection from './InputSection';
+import InputSection from '../components/InputSection';
 
 export default function AddEvent() {
   const [name, setName] = useState('');
