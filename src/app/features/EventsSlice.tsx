@@ -15,6 +15,7 @@ export const EventsSlice = createSlice({
   initialState,
   reducers: {
     addEvent: (state, action: PayloadAction<Event>) => {
+      action.payload.id = state.eventList.length + 1;
       state.eventList.push(action.payload);
     },
     deleteEvent: (state, action: PayloadAction<number>) => {
