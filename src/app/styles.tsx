@@ -10,5 +10,5 @@ export const StyledTextInput = styled.TextInput`
 
 export const StyledInputLabel = styled.Text`
   font-size: 18px;
-  color: '#222';
+  color: #222;
 `;

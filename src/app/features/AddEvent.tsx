@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import { View, Button } from 'react-native';
-import InputSection from './InputSection';
+import InputSection from '../components/InputSection';
+import { useDispatch } from 'react-redux';
+import { addEvent } from './EventsSlice';
 
 export default function AddEvent() {
   const [name, setName] = useState('');
   const [costPerTicket, setCostPerTicket] = useState('');
   const [registrationCapacity, setRegistrationCapacity] = useState('');
+  const dispatch = useDispatch();
 
-  function addEvent() {
+  function saveEvent() {
     let payload = {
       name,
-      costPerTicket,
-      registrationCapacity,
+      costPerTicket: Number(costPerTicket) || 0,
+      registrationCapacity: Number(registrationCapacity) || 0,
     };
     console.log(payload);
+    dispatch(addEvent(payload));
   }
 
   return (
@@ -33,7 +37,7 @@ export default function AddEvent() {
         inputUpdater={setRegistrationCapacity}
         label="Event Capacity"
       />
-      <Button onPress={() => addEvent()} title="Create Event" />
+      <Button onPress={() => saveEvent()} title="Create Event" />
     </View>
   );
 }
