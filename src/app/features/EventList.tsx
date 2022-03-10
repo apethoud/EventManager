@@ -9,6 +9,7 @@ export default function EventList() {
 
   const renderItem = ({ item }) => (
     <EventListItem
+      id={item.id}
       name={item.name}
       costPerTicket={item.costPerTicket}
       registrationCapacity={item.registrationCapacity}

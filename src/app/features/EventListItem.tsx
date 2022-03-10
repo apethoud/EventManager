@@ -2,11 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function EventListItem(props) {
-  const { name } = props;
+  const { id, name } = props;
 
   return (
     <View style={styles.EventWrapper}>
       <Text style={styles.EventName}>{name}</Text>
+      <Text>ID: {id}</Text>
     </View>
   );
 }
